@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>文字数カウンター</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="app">
+        <header class="hedder">
+            <div class="logo">
+                <span class="logo-icon">M.</span>
+                <span>MOJI POP</span>
+            </div>
+
+            <nav>
+                <a href="#counter">COUNTER</a>
+                <a href="#about">ABOUT</a>
+            </nav>
+        </header>
+
+        <main>
+
+            <section class="hero">
+                <div class="hero-dabel">
+                    <span class="label-dot"></span>
+                    SIMPLE TEXT TOOL
+                </div>
+
+                <h1>
+                    Your Words,<br>
+                    <span>Counted</span>
+                </h1>
+
+                <p class="hero-text">
+                    文章を書くのが、ちょっと楽しくなる。<br>
+                    シンプルで使いやすい文字数カウンター
+                </p>
+
+                <div class="hero-decorationdecoration-one">*</div>
+                <div class="hero-decorationdecoration-two">✧</div>
+            </section>
+
+            <section class="counter-section" id="counter">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-number">01 / TEXT EDITOR</span>
+                        <h2>文字数をカウント</h2>
+                    </div>
+
+                    <span class="live-label">
+                        <span class="live-dot"></span>
+                        LIVE COUNT
+                    </span>
+                </div>
+
+                <div class="editor-card">
+                    <div class="editor-header">
+                        <span>YOUR TEXT</span>
+                        <span>{{ characterCount }}CHARACTERS</span>
+                    </div>
+                    <textarea v-model="text" placeholder="ここに文章を入力してください...&#10;&#10;入力するとリアルタイムで文字数をカウントします。"></textarea>
+
+                    <div class="editor-footer">
+                        <span>Start writing something...</span>
+
+                        
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
