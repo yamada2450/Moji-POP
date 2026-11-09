@@ -1,0 +1,186 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans','Noto Sans JP',sans-serif;
+    background: #f7f8fc;
+    color: #25253a;
+    overflow-x: hidden;
+}
+
+button,
+textarea {
+    font: inherit;
+}
+
+#app {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* ヘッダー */
+
+.header {
+    width: 100%;
+    height: 85px;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-bottom: 1px solid #eeeef5;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo-icon {
+    width: 38px;
+    height: 38px;
+    background: #6864ed;
+    color: #fff;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+}
+
+.header nav {
+    display: flex;
+    gap: 35px;
+}
+
+.header nav a {
+    text-decoration: none;
+    color: #77778b;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.header nav a:hover {
+    color: #6864ed;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 490px;
+    padding: 100px 12%;
+    position: relative;
+    background: #e9eaff;
+    overflow: hidden;
+}
+
+.hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    background: #FFF;
+    border-radius: 30px;
+    color: #6864ed;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.label-dot,
+.libe-dot {
+    width: 8px;
+    height: 8px;
+    background: #7bdbad;
+    border-radius: 50%;
+}
+
+.hero h1 {
+    margin-top: 30px;
+    font-size: clamp(55px,8vw,100px);
+    line-height: -5px;
+    font-weight: 800;
+}
+
+.hero-text {
+    margin-top: 30px;
+    color: #77778b;
+    line-height: 2;
+    font-size: 14px;
+}
+
+.hero-decoration {
+    position: absolute;
+    font-size: 130px;
+    color: #fff;
+    opacity: 0.8;
+    animation: float 4s ease-in-out infinite;
+}
+
+.decoration-one {
+    right: 17%;
+    top: 100px;
+}
+
+.decoration-two {
+    right: 30%;
+    bottom: 60px;
+    font-size: 65px;
+    color: #ff91bc;
+    animation-delay: 1s;
+}
+
+/* セクション　カウンター */
+
+.counter-section {
+    max-width: 1100px;
+    margin: 100px auto;
+    padding: 0 30px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 35px;
+}
+
+.section-number {
+    color: #9999ae;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    margin-top: 12px;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.live-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #77778b;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* エディター */

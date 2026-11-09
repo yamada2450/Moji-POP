@@ -74,11 +74,91 @@
                     <div class="editor-footer">
                         <span>Start writing something...</span>
 
-                        
+                        <div class="editor-buttons">
+                            <button class="copy-button" @click="copyText">COPY</button>
+
+                        <div class="clear-buttons">
+                            <button class="clear-button" @click="clearText">CLEAR×</button>
+                            
+                        </div>                        
                     </div>
+
+                    <div class="stats-grid">
+
+                        <div class="stat-card pink-card">
+                            <span class="stat-labl">
+                                NO SPACES
+                            </span>
+                            <div class="stat-number">
+                                {{ noSpaceCount }}
+                                <small>文字</small>
+                            </div>
+                            <span class="mini-icon">✧</span>
+                        </div>
+                        <div class="stat-card yellow-card">
+                            <span class="stat-label">
+                                NO LINEBREAKS
+                            </span>
+                            <div class="stat-number">
+                                {{ noLineBreakCount}}
+                            </div>
+                            <small>文字</small>
+                        </div>
+                        <span class="mini-icon">*</span>
+                    </div>
+                    
+                    <div class="stat-card purple-card">
+                            <span class="stat-label">
+                                WORDS
+                            </span>
+                            <div class="stat-number">
+                                {{ wordCount }}
+                            </div>
+                            <small>単語</small>
+                        </div>
+                        <span class="mini-icon">✧</span>
+                    </div>
+
+                      <div class="stat-card green-card">
+                            <span class="stat-label">
+                                LINES
+                            </span>
+                            <div class="stat-number">
+                                {{ lineCount }}
+                            </div>
+                            <small>行</small>
+                        </div>
+                        <span class="mini-icon">〜</span>
+                    </div>
+
+                </div>
+
+            </section>
+            <section class="about-section" id="about">
+
+                <span class="section-number">02/ABOUT</span>
+                <h2>
+                    Make writing <br>
+                    <span>more fun.</span>
+                </h2>
+                <p>
+                    MOJI POPは、文章の文字数や単語数を簡単にチェックできるオンラインツールです。
+                    プログ、レポート、SNSなど、さまざまな文章作成に活用できます。
+                </p>
+
+                <div class="about-decoration">
+                    GOOD IDEAS START WITH WORDS.
                 </div>
             </section>
         </main>
+
+        <footer class="footer">
+            <div class="footer-logo">MOJI POP.</div>
+            <p>©︎ 2026 MOJI POP.ALL RIGHTS RESERVED.</p>
+            <a href="#top">BACK TO TOP↑</a>
+        </footer>
+
+        <div class="toast" :class="{ show:copied }">✔️コピーしました！</div>
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
