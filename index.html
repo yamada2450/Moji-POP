@@ -1,23 +1,34 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 
 <head>
     <meta charset="UTF-8">
-    <title>文字数カウンター</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="文章を書くのが楽しくなる文字数カウンター MOJI POP">
+
+    <title>MOJI POP | 文字数カウンター</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
+
 <body>
+
     <div id="app">
-        <header class="hedder" id="top">
+
+        <!-- HEADER -->
+        <header class="header" id="top">
+
             <div class="logo">
                 <span class="logo-icon">M.</span>
                 <span>MOJI POP</span>
@@ -27,34 +38,46 @@
                 <a href="#counter">COUNTER</a>
                 <a href="#about">ABOUT</a>
             </nav>
+
         </header>
+
 
         <main>
 
+            <!-- HERO -->
             <section class="hero">
-                <div class="hero-dabel">
+
+                <div class="hero-label">
                     <span class="label-dot"></span>
                     SIMPLE TEXT TOOL
                 </div>
 
                 <h1>
                     Your Words,<br>
-                    <span>Counted</span>
+                    <span>Counted.</span>
                 </h1>
 
                 <p class="hero-text">
                     文章を書くのが、ちょっと楽しくなる。<br>
-                    シンプルで使いやすい文字数カウンター
+                    シンプルで使いやすい文字数カウンター。
                 </p>
 
-                <div class="hero-decorationdecoration-one">*</div>
-                <div class="hero-decorationdecoration-two">✧</div>
+                <div class="hero-decoration decoration-one">✳</div>
+                <div class="hero-decoration decoration-two">✦</div>
+
             </section>
 
+
+            <!-- COUNTER -->
             <section class="counter-section" id="counter">
+
                 <div class="section-heading">
+
                     <div>
-                        <span class="section-number">01 / TEXT EDITOR</span>
+                        <span class="section-number">
+                            01 / TEXT EDITOR
+                        </span>
+
                         <h2>文字数をカウント</h2>
                     </div>
 
@@ -62,107 +85,209 @@
                         <span class="live-dot"></span>
                         LIVE COUNT
                     </span>
+
                 </div>
 
+
+                <!-- EDITOR -->
                 <div class="editor-card">
+
                     <div class="editor-header">
                         <span>YOUR TEXT</span>
-                        <span>{{ characterCount }}CHARACTERS</span>
+                        <span>{{ characterCount }} CHARACTERS</span>
                     </div>
-                    <textarea v-model="text" placeholder="ここに文章を入力してください...&#10;&#10;入力するとリアルタイムで文字数をカウントします。"></textarea>
+
+                    <textarea
+                        v-model="text"
+                        placeholder="ここに文章を入力してください...&#10;&#10;入力するとリアルタイムで文字数をカウントします。"
+                        aria-label="文字数をカウントする文章入力欄"
+                    ></textarea>
+
 
                     <div class="editor-footer">
-                        <span>Start writing something...</span>
+
+                        <span class="editor-message">
+                            ✎ Start writing something...
+                        </span>
 
                         <div class="editor-buttons">
-                            <button class="copy-button" @click="copyText">COPY</button>
 
-                        <div class="clear-buttons">
-                            <button class="clear-button" @click="clearText">CLEAR×</button>
-                            
-                        </div>                        
+                            <button
+                                class="copy-button"
+                                @click="copyText"
+                                type="button"
+                            >
+                                COPY ↗
+                            </button>
+
+                            <button
+                                class="clear-button"
+                                @click="clearText"
+                                type="button"
+                            >
+                                CLEAR ×
+                            </button>
+
+                        </div>
+
                     </div>
 
-                    <div class="stats-grid">
+                </div>
 
-                        <div class="stat-card pink-card">
-                            <span class="stat-labl">
-                                NO SPACES
-                            </span>
-                            <div class="stat-number">
-                                {{ noSpaceCount }}
-                                <small>文字</small>
-                            </div>
-                            <span class="mini-icon">✧</span>
-                        </div>
-                        <div class="stat-card yellow-card">
-                            <span class="stat-label">
-                                NO LINEBREAKS
-                            </span>
-                            <div class="stat-number">
-                                {{ noLineBreakCount}}
-                            </div>
+
+                <!-- STAT CARDS -->
+                <div class="stats-grid">
+
+                    <!-- TOTAL -->
+                    <div class="stat-card main-stat">
+
+                        <span class="stat-label">
+                            TOTAL CHARACTERS
+                        </span>
+
+                        <div class="stat-number">
+                            {{ characterCount }}
                             <small>文字</small>
                         </div>
-                        <span class="mini-icon">*</span>
-                    </div>
-                    
-                    <div class="stat-card purple-card">
-                            <span class="stat-label">
-                                WORDS
-                            </span>
-                            <div class="stat-number">
-                                {{ wordCount }}
-                            </div>
-                            <small>単語</small>
-                        </div>
-                        <span class="mini-icon">✧</span>
+
+                        <span class="stat-icon">✳</span>
+
                     </div>
 
-                      <div class="stat-card green-card">
-                            <span class="stat-label">
-                                LINES
-                            </span>
-                            <div class="stat-number">
-                                {{ lineCount }}
-                            </div>
+
+                    <!-- NO SPACES -->
+                    <div class="stat-card pink-card">
+
+                        <span class="stat-label">
+                            NO SPACES
+                        </span>
+
+                        <div class="stat-number">
+                            {{ noSpaceCount }}
+                            <small>文字</small>
+                        </div>
+
+                        <span class="mini-icon">✦</span>
+
+                    </div>
+
+
+                    <!-- NO LINE BREAKS -->
+                    <div class="stat-card yellow-card">
+
+                        <span class="stat-label">
+                            NO LINE BREAKS
+                        </span>
+
+                        <div class="stat-number">
+                            {{ noLineBreakCount }}
+                            <small>文字</small>
+                        </div>
+
+                        <span class="mini-icon">✷</span>
+
+                    </div>
+
+
+                    <!-- WORDS -->
+                    <div class="stat-card purple-card">
+
+                        <span class="stat-label">
+                            WORDS
+                        </span>
+
+                        <div class="stat-number">
+                            {{ wordCount }}
+                            <small>単語</small>
+                        </div>
+
+                        <span class="mini-icon">✧</span>
+
+                    </div>
+
+
+                    <!-- LINES -->
+                    <div class="stat-card green-card">
+
+                        <span class="stat-label">
+                            LINES
+                        </span>
+
+                        <div class="stat-number">
+                            {{ lineCount }}
                             <small>行</small>
                         </div>
-                        <span class="mini-icon">〜</span>
+
+                        <span class="mini-icon">〰</span>
+
                     </div>
 
                 </div>
 
             </section>
+
+
+            <!-- ABOUT -->
             <section class="about-section" id="about">
 
-                <span class="section-number">02/ABOUT</span>
+                <span class="section-number">
+                    02 / ABOUT
+                </span>
+
                 <h2>
-                    Make writing <br>
+                    Make writing<br>
                     <span>more fun.</span>
                 </h2>
+
                 <p>
-                    MOJI POPは、文章の文字数や単語数を簡単にチェックできるオンラインツールです。
-                    プログ、レポート、SNSなど、さまざまな文章作成に活用できます。
+                    MOJI POPは、文章の文字数や単語数を
+                    簡単にチェックできるオンラインツールです。
+                    ブログ、レポート、SNSなど、
+                    さまざまな文章作成に活用できます。
                 </p>
 
                 <div class="about-decoration">
                     GOOD IDEAS START WITH WORDS.
                 </div>
+
             </section>
+
         </main>
 
+
+        <!-- FOOTER -->
         <footer class="footer">
-            <div class="footer-logo">MOJI POP.</div>
-            <p>©︎ 2026 MOJI POP.ALL RIGHTS RESERVED.</p>
-            <a href="#top">BACK TO TOP↑</a>
+
+            <div class="footer-logo">
+                MOJI POP.
+            </div>
+
+            <p>
+                © 2026 MOJI POP. ALL RIGHTS RESERVED.
+            </p>
+
+            <a href="#top">
+                BACK TO TOP ↑
+            </a>
+
         </footer>
 
-        <div class="toast" :class="{ show:copied }">✔️コピーしました！</div>
+
+        <!-- TOAST -->
+        <div class="toast" :class="{ show: copied }">
+            ✓ コピーしました！
+        </div>
+
+
     </div>
 
+
+    <!-- Vue.js -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="script.js"></script>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+
 </body>
 
 </html>
